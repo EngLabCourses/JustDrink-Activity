@@ -52,6 +52,11 @@ public class DrinkFactory {
                     .idDrink("17177").strDrink("Dark Caipirinha").strCategory("Cocktail")
                     .strGlass("Highball glass").strInstructions("Muddle the sugar into the lime wedges in an old-fashioned glass.\\r\\nFill the glass with ice cubes.\\r\\nPour the cachaca into the glass.\\r\\nStir well.")
                     .ingredients(new String[]{"demerara Sugar", "Lime", "Cachaca"})
+                    .measures(new String[]{"2 tsp ", "1 ", "2 1/2 oz"}).build(),
+            new Drink.Builder()
+                    .idDrink("17177").strDrink("Dark Caipirinha").strCategory("Cocktail")
+                    .strGlass("Highball glass").strInstructions("Muddle the sugar into the lime wedges in an old-fashioned glass.\\r\\nFill the glass with ice cubes.\\r\\nPour the cachaca into the glass.\\r\\nStir well.")
+                    .ingredients(new String[]{"demerara Sugar", "Lime", "Cachaca"})
                     .measures(new String[]{"2 tsp ", "1 ", "2 1/2 oz"}).build()
 
     };

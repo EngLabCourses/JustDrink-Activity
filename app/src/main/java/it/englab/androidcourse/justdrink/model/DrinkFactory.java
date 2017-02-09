@@ -10,9 +10,6 @@ public class DrinkFactory {
 
     },
     {
-        "strDrink": "Dark Caipirinha",
-            "strDrinkThumb": "http://www.thecocktaildb.com/images/media/drink/uwstrx1472406058.jpg",
-            "idDrink": "17177"
     },
     {
         "strDrink": "Manhattan",
@@ -39,7 +36,7 @@ public class DrinkFactory {
             "strDrinkThumb": "http://www.thecocktaildb.com/images/media/drink/rxtqps1478251029.jpg",
             "idDrink": "13427"
     }*/
-    
+
     private static final Drink[] drinks = {
             new Drink.Builder()
                     .idDrink("14107").strDrink("Absolut Summertime").strCategory("Cocktail")
@@ -50,7 +47,12 @@ public class DrinkFactory {
                     .idDrink("14133").strDrink("Cosmopolitan Martini").strCategory("Cocktail")
                     .strGlass("vote").strInstructions("Pour all ingredients in mixing glass half filled with ice, shake and strain into chilled Martini glass.")
                     .ingredients(new String[]{"Cointreau", "Vodka", "Lime", "Cranberry juice"})
-                    .measures(new String[]{"1/2 oz ", "1 oz ", "Juice of 1/2 ", "1 splash "}).build()
+                    .measures(new String[]{"1/2 oz ", "1 oz ", "Juice of 1/2 ", "1 splash "}).build(),
+            new Drink.Builder()
+                    .idDrink("17177").strDrink("Dark Caipirinha").strCategory("Cocktail")
+                    .strGlass("Highball glass").strInstructions("Muddle the sugar into the lime wedges in an old-fashioned glass.\\r\\nFill the glass with ice cubes.\\r\\nPour the cachaca into the glass.\\r\\nStir well.")
+                    .ingredients(new String[]{"demerara Sugar", "Lime", "Cachaca"})
+                    .measures(new String[]{"2 tsp ", "1 ", "2 1/2 oz"}).build()
 
     };
 }

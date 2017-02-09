@@ -5,33 +5,6 @@ package it.englab.androidcourse.justdrink.model;
  */
 
 public class DrinkFactory {
-/*
-    {
-
-    },
-    {
-    },
-    {
-        "strDrink": "Manhattan",
-            "strDrinkThumb": "http://www.thecocktaildb.com/images/media/drink/tppwwx1439906584.jpg",
-            "idDrink": "13839"
-    },
-    {
-        "strDrink": "Martinez Cocktail",
-            "strDrinkThumb": "http://www.thecocktaildb.com/images/media/drink/wwxwvr1439906452.jpg",
-            "idDrink": "11720"
-    },
-    {
-        "strDrink": "Martini (Dry) (5-to-1)",
-            "strDrinkThumb": "http://www.thecocktaildb.com/images/media/drink/vryutq1477140858.jpg",
-            "idDrink": "11728"
-    },
-    {
-        "strDrink": "Miami Vice",
-            "strDrinkThumb": "http://www.thecocktaildb.com/images/media/drink/qvuyqw1441208955.jpg",
-            "idDrink": "13936"
-    },
-    */
 
     private static final Drink[] drinks = {
             new Drink.Builder()

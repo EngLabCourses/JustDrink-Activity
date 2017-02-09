@@ -1,5 +1,7 @@
 package it.englab.androidcourse.justdrink.model;
 
+import java.util.Arrays;
+
 /**
  * Created by spawn on 07/02/2017.
  */
@@ -125,5 +127,21 @@ public class Drink {
         public Drink build() {
             return new Drink(this);
         }
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Drink{");
+        sb.append("idDrink='").append(idDrink).append('\'');
+        sb.append(", strDrink='").append(strDrink).append('\'');
+        sb.append(", strCategory='").append(strCategory).append('\'');
+        sb.append(", strAlcoholic='").append(strAlcoholic).append('\'');
+        sb.append(", strGlass='").append(strGlass).append('\'');
+        sb.append(", strInstructions='").append(strInstructions).append('\'');
+        sb.append(", strDrinkThumb='").append(strDrinkThumb).append('\'');
+        sb.append(", ingredients=").append(Arrays.toString(ingredients));
+        sb.append(", measures=").append(Arrays.toString(measures));
+        sb.append('}');
+        return sb.toString();
     }
 }

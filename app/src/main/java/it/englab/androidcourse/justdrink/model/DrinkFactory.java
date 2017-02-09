@@ -1,9 +1,10 @@
 package it.englab.androidcourse.justdrink.model;
 
+import java.util.Random;
+
 /**
  * Created by spawn on 08/02/17.
  */
-
 public class DrinkFactory {
 
     private static final Drink[] drinks = {
@@ -32,6 +33,13 @@ public class DrinkFactory {
                     .strGlass("Highball glass").strInstructions("Lightly muddle the mint and sugar with a splash of soda water in a mixing glass until the sugar dissolve and you smell the mint. Squeeze the lime into the glass, add rum and shake with ice. Strain over cracked ice in a highball glass. Top with soda water, garnish with mint sprig and serve.")
                     .ingredients(new String[]{"Light rum", "Lime", "Sugar", "Mint", "Soda water"})
                     .measures(new String[]{"2-3 oz ", "Juice of 1 ", "2 tsp ", "2-4"}).build()
-
     };
+
+    public static Drink[] getDrinks() {
+        return drinks;
+    }
+
+    public static Drink getRandomDrink() {
+        return drinks[new Random().nextInt(4)];
+    }
 }

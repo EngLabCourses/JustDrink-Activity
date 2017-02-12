@@ -2,6 +2,7 @@ package it.englab.androidcourse.justdrink.model;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -39,12 +40,12 @@ public class DrinkFactory {
     }
 
     public static Drink getRandomDrink() {
-        Drink[] drinks = getDrinks();
-        return drinks[new Random().nextInt(4)];
+        Object[] drinks = getDrinks();
+        return (Drink)drinks[new Random().nextInt(4)];
     }
 
-    private static Drink[] getDrinks() {
-        return (Drink[]) drinksMap.values().toArray();
+    private static Object[] getDrinks() {
+        return drinksMap.values().toArray();
     }
 
 }

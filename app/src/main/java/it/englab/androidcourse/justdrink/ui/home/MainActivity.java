@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //TODO 1
-        textViewDrinkName = (TextView) findViewById(R.id.drink_name);
+        //textViewDrinkName = (TextView) findViewById(R.id.drink_name);
     }
 
     @Override
@@ -44,19 +44,21 @@ public class MainActivity extends AppCompatActivity {
         final Drink randomDrink = DrinkFactory.getRandomDrink();
 
         //TODO 1
-        textViewDrinkName.setText(randomDrink.getStrDrink());
+        //textViewDrinkName.setText(randomDrink.getStrDrink());
         //TODO 2
+        /*
         textViewDrinkName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO 2
                 Log.d(TAG, "Random Drink info: " + randomDrink);
                 //TODO 3
-                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-                intent.putExtra(DetailActivity.DRINK_ID_KEY, randomDrink.getIdDrink());
-                startActivity(intent);
+                //Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                //intent.putExtra(DetailActivity.DRINK_ID_KEY, randomDrink.getIdDrink());
+                //startActivity(intent);
             }
         });
+        */
 
     }
 

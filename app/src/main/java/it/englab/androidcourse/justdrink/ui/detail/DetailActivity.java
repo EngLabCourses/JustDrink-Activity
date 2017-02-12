@@ -12,16 +12,15 @@ import it.englab.androidcourse.justdrink.model.DrinkFactory;
 public class DetailActivity extends AppCompatActivity {
 
     public static final String DRINK_ID_KEY = "COCKATIL_ID";
-    private TextView info, ingredients, instructions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        info = (TextView) findViewById(R.id.detail_cocktail_info);
-        ingredients = (TextView) findViewById(R.id.detail_cocktail_ingredients);
-        instructions = (TextView) findViewById(R.id.detail_cocktail_instructions);
+        TextView info = (TextView) findViewById(R.id.detail_cocktail_info);
+        TextView ingredients = (TextView) findViewById(R.id.detail_cocktail_ingredients);
+        TextView instructions = (TextView) findViewById(R.id.detail_cocktail_instructions);
 
         Drink drink = DrinkFactory.getDrinkById(getIntent().getExtras().getString(DRINK_ID_KEY));
 
@@ -34,7 +33,19 @@ public class DetailActivity extends AppCompatActivity {
             infoBuilder.append(", ").append(drink.getStrAlcoholic());
 
         info.setText(infoBuilder.toString());
+        instructions.setText(drink.getStrInstructions());
+        ingredients.setText(getIngredientsString(drink));
 
     }
 
+    private String getIngredientsString(Drink drink) {
+        StringBuilder ingredientsBuilder = new StringBuilder();
+
+        String[] ingredients = drink.getIngredients();
+        String[] measures = drink.getMeasures();
+        for (int i = 0; i < ingredients.length; i++) {
+            ingredientsBuilder.append(ingredients[i]).append(" (").append(measures[i]).append(") ");
+        }
+        return ingredientsBuilder.toString();
+    }
 }

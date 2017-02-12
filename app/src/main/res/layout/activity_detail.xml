@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_detail"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="it.englab.androidcourse.justdrink.ui.detail.DetailActivity">
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/detail_cocktail_image"
+        android:layout_width="match_parent"
+        android:layout_height="168dp"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        tools:background="#ededed" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/detail_cocktail_image"
+        android:background="@drawable/scrim_gradient" />
 
     <TextView
         android:id="@+id/detail_cocktail_info"
         style="@style/detail_cocktail_desc_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/detail_cocktail_image"
         android:layout_marginBottom="@dimen/spacing_micro"
         android:layout_marginLeft="@dimen/spacing_normal"
-        android:layout_marginStart="@dimen/spacing_normal"
         tools:text="Info" />
 
     <TextView
@@ -25,8 +33,8 @@
         style="@style/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/detail_cocktail_image"
         android:layout_marginLeft="@dimen/spacing_normal"
-        android:layout_marginStart="@dimen/spacing_normal"
         android:layout_marginTop="@dimen/spacing_normal"
         android:text="@string/ingredienti" />
 
@@ -37,8 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/label_ingredients"
         android:layout_marginLeft="@dimen/spacing_normal"
+        android:layout_marginRight="@dimen/spacing_normal"
         android:layout_marginTop="@dimen/spacing_micro"
-        tools:ignore="RtlHardcoded" />
+        tools:text="Ingrediente 1 (123) Ingrediente 2 (234) "/>
 
     <TextView
         android:id="@+id/label_instructions"
@@ -48,8 +57,7 @@
         android:layout_below="@id/detail_cocktail_ingredients"
         android:layout_marginLeft="@dimen/spacing_normal"
         android:layout_marginTop="@dimen/spacing_normal"
-        android:text="@string/istruzioni"
-        tools:ignore="RtlHardcoded" />
+        android:text="@string/istruzioni" />
 
     <TextView
         android:id="@+id/detail_cocktail_instructions"
@@ -58,6 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/label_instructions"
         android:layout_marginLeft="@dimen/spacing_normal"
+        android:layout_marginRight="@dimen/spacing_normal"
         android:layout_marginTop="@dimen/spacing_micro"
-        tools:ignore="RtlHardcoded" />
+        tools:text="Le istruzioni del cocktail saranno visualizzate qui! Le istruzioni del cocktail saranno visualizzate qui!"/>
 </RelativeLayout>

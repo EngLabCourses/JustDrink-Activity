@@ -1,5 +1,7 @@
 package it.englab.androidcourse.justdrink.model;
 
+import android.text.TextUtils;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -10,8 +12,16 @@ import java.util.Random;
 public class DrinkFactory {
 
     private static final Map<String, Drink> drinksMap = new HashMap<>(4);
+    private static final Drink emptyDrink;
 
     static {
+
+        emptyDrink = new Drink.Builder()
+                .idDrink("").strDrink("").strCategory("")
+                .strGlass("").strInstructions("")
+                .ingredients(new String[]{})
+                .measures(new String[]{}).build();
+
         drinksMap.put("14107", new Drink.Builder()
                 .idDrink("14107").strDrink("Absolut Summertime").strCategory("Cocktail")
                 .strGlass("Collins glass").strInstructions("Add all ingredients except lemon to shaker filled with ice. Cover and shake vigorously. Strain contents into ice filled collins glass. Garnish with lemon.")
@@ -35,6 +45,9 @@ public class DrinkFactory {
     }
 
     public static Drink getDrinkById(String drinkId) {
+
+        if(TextUtils.isEmpty(drinkId)) return emptyDrink;
+
         return drinksMap.get(drinkId);
     }
 

@@ -15,7 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.detail.DetailActivity"></activity>
+        <activity android:name=".ui.detail.DetailActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="it.englab.androidcourse.justdrink.action.DETAIL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

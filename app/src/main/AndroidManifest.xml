@@ -11,13 +11,20 @@
         <activity android:name=".ui.home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.detail.DetailActivity" android:exported="true">
+        <activity
+            android:name=".ui.detail.DetailActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="it.englab.androidcourse.justdrink.action.DETAIL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.detail.DetailActivityForResult">
+            <intent-filter>
+                <action android:name="it.englab.androidcourse.justdrink.action.DETAIL_FOR_RESULT" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

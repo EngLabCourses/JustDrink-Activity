@@ -21,6 +21,16 @@
                 <action android:name="it.englab.androidcourse.justdrink.action.DETAIL" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="justdrink.androidcourse.englab.it"
+                    android:scheme="justdrinkapp"
+                    android:pathPrefix="/id"/>
+            </intent-filter>
         </activity>
         <activity android:name=".ui.detail.DetailActivityForResult">
             <intent-filter>

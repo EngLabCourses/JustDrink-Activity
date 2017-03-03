@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import it.englab.androidcourse.justdrink.JustDrinkApplication;
 import it.englab.androidcourse.justdrink.R;
 import it.englab.androidcourse.justdrink.model.Drink;
 import it.englab.androidcourse.justdrink.model.DrinkFactory;
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //TODO 1
-        //textViewDrinkName = (TextView) findViewById(R.id.drink_name);
+        textViewDrinkName = (TextView) findViewById(R.id.drink_name);
     }
 
     @Override
@@ -39,14 +41,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        JustDrinkApplication application = ((JustDrinkApplication) getApplication());
+        application.increment();
+        int count = application.getIncrementValue();
+        Toast.makeText(this, "Activity mostrate: " + count, Toast.LENGTH_SHORT).show();
+
         Log.d(TAG, "onResume");
 
         final Drink randomDrink = DrinkFactory.getRandomDrink();
 
         //TODO 1
-        //textViewDrinkName.setText(randomDrink.getStrDrink());
+        textViewDrinkName.setText(randomDrink.getStrDrink());
         //TODO 2
-        /*
         textViewDrinkName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 //startActivity(intent);
             }
         });
-        */
 
     }
 

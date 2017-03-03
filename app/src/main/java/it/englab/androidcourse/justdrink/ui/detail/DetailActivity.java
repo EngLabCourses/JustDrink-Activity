@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import it.englab.androidcourse.justdrink.JustDrinkApplication;
 import it.englab.androidcourse.justdrink.R;
 import it.englab.androidcourse.justdrink.model.Drink;
 import it.englab.androidcourse.justdrink.model.DrinkFactory;
@@ -43,6 +45,16 @@ public class DetailActivity extends AppCompatActivity {
         instructions.setText(drink.getStrInstructions());
         ingredients.setText(getIngredientsString(drink));
         setTitle(drink.getStrDrink());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        JustDrinkApplication application = ((JustDrinkApplication) getApplication());
+        application.increment();
+        int count = application.getIncrementValue();
+        Toast.makeText(this, "Activity mostrate: " + count, Toast.LENGTH_SHORT).show();
     }
 
     private String getIngredientsString(Drink drink) {

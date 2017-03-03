@@ -3,6 +3,7 @@
     package="it.englab.androidcourse.justdrink">
 
     <application
+        android:name=".JustDrinkApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,6 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--activity
+            android:name=".ui.home.EmptyActivity"
+            android:label="Activity Vuota">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-->
         <activity
             android:name=".ui.detail.DetailActivity"
             android:exported="true">
@@ -26,10 +35,11 @@
 
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data
                     android:host="justdrink.androidcourse.englab.it"
-                    android:scheme="justdrinkapp"
-                    android:pathPrefix="/id"/>
+                    android:pathPrefix="/id"
+                    android:scheme="justdrinkapp" />
             </intent-filter>
         </activity>
         <activity android:name=".ui.detail.DetailActivityForResult">

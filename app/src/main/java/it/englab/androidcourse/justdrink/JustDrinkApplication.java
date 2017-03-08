@@ -20,10 +20,6 @@ public class JustDrinkApplication extends Application {
         count++;
     }
 
-    public void decrement() {
-        count--;
-    }
-
     public int getIncrementValue() {
         return count;
     }

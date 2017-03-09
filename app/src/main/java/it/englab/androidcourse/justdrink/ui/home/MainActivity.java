@@ -1,6 +1,5 @@
 package it.englab.androidcourse.justdrink.ui.home;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +13,6 @@ import it.englab.androidcourse.justdrink.R;
 import it.englab.androidcourse.justdrink.model.Drink;
 import it.englab.androidcourse.justdrink.model.DrinkFactory;
 import it.englab.androidcourse.justdrink.ui.detail.DetailActivity;
-import it.englab.androidcourse.justdrink.ui.detail.TestContextActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,11 +59,11 @@ public class MainActivity extends AppCompatActivity {
                 //TODO 2
                 Log.d(TAG, "Random Drink info: " + randomDrink);
                 //TODO 3
-                //Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-                //intent.putExtra(DetailActivity.DRINK_ID_KEY, randomDrink.getIdDrink());
-                //startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                intent.putExtra(DetailActivity.DRINK_ID_KEY, randomDrink.getIdDrink());
+                startActivity(intent);
 
-                //TODO 4
+                //TODO 4 - Activity for result example
                 //Intent intent = new Intent(MainActivity.this, TestContextActivity.class);
                 //startActivity(intent);
             }
